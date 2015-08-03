@@ -1,4 +1,4 @@
-package com.android.babo.signalsfrommars;
+package com.android.babo.signalsfrommars.ui;
 
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
@@ -6,8 +6,12 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.android.babo.signalsfrommars.R;
+import com.android.babo.signalsfrommars.model.Page;
+
 
 public class StoryActivity extends ActionBarActivity {
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +24,7 @@ public class StoryActivity extends ActionBarActivity {
         if(name == null){
             name = "Friend";
         }
+
 
 
 
