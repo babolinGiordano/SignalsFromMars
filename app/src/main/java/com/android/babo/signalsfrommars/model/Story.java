@@ -14,26 +14,20 @@ public class Story {
 
         mPages[0] = new Page(
                 R.mipmap.page0,
-                "On your return trip from studying Saturn's rings, you hear a distress signal that seems " +
-                        "to be coming from the surface of Mars. It's strange because there hasn't been a colony " +
-                        "there in years. Even stranger, it's calling you by name: \"Help me, %1$s, you're my only hope.\"",
+                "On your return trip from studying Saturn's rings, you hear a distress signal that seems be coming from the surface of Mars. It's strange because there hasn't been a colony there in years. Even stranger, it's calling you by name: \"Help me, %1$s, you're my only hope.\"",
                 new Choice("Stop and investigate", 1),
                 new Choice("Continue home to Earth", 2)
         );
 
         mPages[1] = new Page(
                 R.mipmap.page1,
-                "You deftly land your ship near where the distress signal originated. You didn't notice anything strange " +
-                        "on your fly-by, but there is a cave in front of you. Behind you is an abandoned rover from the early 21st century.",
+                "You deftly land your ship near where the distress signal originated. You didn't notice anything strange on your fly-by, but there is a cave in front of you. Behind you is an abandoned rover from the early 21st century.",
                 new Choice("Explore the cave", 3),
                 new Choice("Explore the rover", 4));
 
         mPages[2] = new Page(
                 R.mipmap.page2,
-                "You continue your course to Earth. Two days later, you receive a transmission from HQ saying " +
-                        "that they have detected some sort of anomaly on the surface of Mars near an abandoned rover." +
-                        " They ask you to investigate, but ultimately the decision is yours because your mission has " +
-                        "already run much longer than planned and supplies are low.",
+                "You continue your course to Earth. Two days later, you receive a transmission from HQ saying that they have detected some sort of anomaly on the surface of Mars near an abandoned rover. They ask you to investigate, but ultimately the decision is yours because your mission has already run much longer than planned and supplies are low.",
                 new Choice("Head back to Mars to investigate", 4),
                 new Choice("Continue home to Earth", 6)
         );
@@ -71,4 +65,11 @@ public class Story {
         );
 
     }
+
+    public Page getPage(int pageNumber){
+        return mPages[pageNumber];
+    }
+
+
+
 }
