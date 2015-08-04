@@ -57,10 +57,20 @@ public class StoryActivity extends ActionBarActivity {
         pageText = String.format(pageText, mName);
         mTextView.setText(pageText);
 
-        mChoice1.setText(mCurrentPage.getChoice1().getText());
-        mChoice2.setText(mCurrentPage.getChoice2().getText());
+        if(mCurrentPage.isFinal()){
+            mChoice1.setVisibility(View.INVISIBLE);
+            mChoice2.setText("Play again");
+            mChoice2.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    finish();
+                    //Con questo comando interrompe l'esecuzione e rilancia l'activity precedente (MainActivity)
+                }
+            });
+        }else {
+            mChoice1.setText(mCurrentPage.getChoice1().getText());
+            mChoice2.setText(mCurrentPage.getChoice2().getText());
 
-        if (mCurrentPage.isFinal() != true) {
             mChoice1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -68,16 +78,14 @@ public class StoryActivity extends ActionBarActivity {
                     loadPage(nextPage);
                 }
             });
+
+            mChoice2.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    int nextPage = mCurrentPage.getChoice2().getNextPage();
+                    loadPage(nextPage);
+                }
+            });
         }
-
-        mChoice2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                int nextPage = mCurrentPage.getChoice2().getNextPage();
-                loadPage(nextPage);
-            }
-        });
-
-
     }
 }
